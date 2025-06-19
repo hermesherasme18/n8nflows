@@ -4,7 +4,7 @@ FROM n8nio/n8n:latest
 USER root
 # Crea el directorio /data (si no existe) y asigna la propiedad al usuario 'node"
 # Esto asegura que nón tenga acceso de escritura a este directorio
-RUN mkdir -p /data 8& chown -R node:node /data
+RUN mkdir -p /data && chown -R node:node /data
 # Vuelve al usuario 'node', recomendado para ejecutar la aplicación de forma segura
 USER node
 # Declara /data como un volumen persistente
