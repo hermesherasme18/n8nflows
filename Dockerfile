@@ -13,9 +13,9 @@ USER node
 # Declara /data como un volumen persistente
 VOLUME /data
 
-# Render usa la variable de entorno PORT, así que la respetamos
+# Render necesita que n8n escuche en el puerto de la variable $PORT
 ENV N8N_PORT=${PORT:-5678}
 ENV N8N_HOST=0.0.0.0
 
-# El comando por defecto para ejecutar n8n
-CMD ["n8n"]
+# Expón un puerto por defecto, aunque Render usará su propio
+EXPOSE 5678
